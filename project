@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penerimaan Calon Prajurit TNI</title>
+</head>
+
+<body>
+
+    <div class="kotak-utama">
+
+        <div class="kotak-1">
+            <img src="logo.png" /alt="Taruna Akademi TNI">
+            taruna akademi tni
+        </div>
+
+        <div class="kotak-2">
+            pa psdp penerbang tni
+        </div>
+
+        <div class="kotak-3">
+            pa pk tni reguler gelombang 1
+        </div>
+
+    </div>
+
+
+    <h1 class="judul">
+        <span class="jadwal">Jadwal</span>
+        Penerimaan Calon Prajurit TNI
+    </h1>
+
+
+    <p class="text-dibawah-judul">
+        Klik salah satu tautan di bawah ini untuk mendaftar.
+    </p>
+
+</body>
+
+</html>
