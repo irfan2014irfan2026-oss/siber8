@@ -1,7 +1,18 @@
 const state = { products: [], categories: [], cart: JSON.parse(localStorage.getItem('partcraft-cart') || '[]'), user: JSON.parse(localStorage.getItem('partcraft-user') || 'null'), token: localStorage.getItem('partcraft-token') || '', authMode: 'login', detailProduct: null };
 const $ = (selector) => document.querySelector(selector);
 const money = (value) => new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(value);
-const api = async (url, options = {}) => { const response = await fetch(url, { ...options, headers: { ...(options.headers || {}), ...(state.token ? { 'x-auth-token': state.token } : {}) } }); const data = response.status === 204 ? null : await response.json(); if (!response.ok) throw new Error(data?.error || 'Permintaan gagal'); return data; };
+const staticPageCatalog = window.location.hostname.endsWith('github.io');
+const catalogPromise = staticPageCatalog ? fetch('./catalog.json').then((response) => response.json()) : null;
+const api = async (url, options = {}) => {
+  if (staticPageCatalog && (!options.method || options.method === 'GET')) {
+    if (url === '/api/categories' || url === '/api/products') {
+      const catalog = await catalogPromise;
+      return url === '/api/categories' ? catalog.categories : catalog.products;
+    }
+    if (url === '/api/orders') return [];
+  }
+  const response = await fetch(url, { ...options, headers: { ...(options.headers || {}), ...(state.token ? { 'x-auth-token': state.token } : {}) } }); const data = response.status === 204 ? null : await response.json(); if (!response.ok) throw new Error(data?.error || 'Permintaan gagal'); return data;
+};
 const showToast = (message) => { const toast = $('#toast'); toast.textContent = message; toast.classList.add('show'); setTimeout(() => toast.classList.remove('show'), 2600); };
 const saveCart = () => { localStorage.setItem('partcraft-cart', JSON.stringify(state.cart)); renderCart(); };
 
