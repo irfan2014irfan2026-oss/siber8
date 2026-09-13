@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Profil Surya Kencana - Pengusaha Batu Bara dan Energi Indonesia"
+    >
+
+    <title>Surya Kencana | Pengusaha Batu Bara</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #0d1117;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(13, 17, 23, 0.95);
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid #2b3138;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #f5b942;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #f5b942;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            padding: 150px 10% 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(13,17,23,0.97),
+                    rgba(13,17,23,0.75)
+                ),
+                url("https://images.unsplash.com/photo-1518709766631-a6a7f45921c3?auto=format&fit=crop&w=1600&q=80");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-text {
+            max-width: 700px;
+        }
+
+        .hero-text .small-title {
+            color: #f5b942;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .hero-text h1 {
+            font-size: 64px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero-text h1 span {
+            color: #f5b942;
+        }
+
+        .hero-text h2 {
+            font-size: 24px;
+            color: #c8c8c8;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            max-width: 650px;
+            color: #b8b8b8;
+            margin-bottom: 30px;
+            font-size: 18px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            background-color: #f5b942;
+            color: #111111;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #ffffff;
+            transform: translateY(-3px);
+        }
+
+        /* GENERAL SECTION */
+        section {
+            padding: 90px 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title span {
+            color: #f5b942;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            margin-top: 8px;
+        }
+
+        /* ABOUT */
+        .about {
+            background-color: #161b22;
+        }
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .profile-card {
+            background: #0d1117;
+            border: 1px solid #30363d;
+            padding: 35px;
+            border-radius: 15px;
+        }
+
+        .profile-photo {
+            width: 160px;
+            height: 160px;
+            margin: auto;
+            border-radius: 50%;
+            background: #222831;
+            border: 5px solid #f5b942;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 55px;
+            font-weight: bold;
+            color: #f5b942;
+        }
+
+        .profile-card h3 {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 28px;
+        }
+
+        .profile-card p {
+            text-align: center;
+            color: #aaa;
+        }
+
+        .about-text h3 {
+            color: #f5b942;
+            margin-bottom: 15px;
+            font-size: 28px;
+        }
+
+        .about-text p {
+            color: #c0c0c0;
+            margin-bottom: 15px;
+        }
+
+        /* BUSINESS */
+        .business {
+            background: #0d1117;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            padding: 30px;
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            border-color: #f5b942;
+            transform: translateY(-8px);
+        }
+
+        .card .icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            color: #f5b942;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #b3b3b3;
+        }
+
+        /* VISION */
+        .vision {
+            background: #161b22;
+        }
+
+        .vision-box {
+            max-width: 900px;
+            margin: auto;
+            padding: 45px;
+            border-left: 5px solid #f5b942;
+            background: #0d1117;
+            border-radius: 10px;
+        }
+
+        .vision-box h3 {
+            font-size: 30px;
+            margin-bottom: 15px;
+            color: #f5b942;
+        }
+
+        .vision-box p {
+            color: #c3c3c3;
+            font-size: 18px;
+        }
+
+        /* STATS */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+
+        .stat {
+            padding: 30px;
+            background: #161b22;
+            border-radius: 10px;
+        }
+
+        .stat h3 {
+            color: #f5b942;
+            font-size: 35px;
+        }
+
+        .stat p {
+            color: #aaa;
+        }
+
+        /* CONTACT */
+        .contact {
+            background-color: #161b22;
+        }
+
+        .contact-box {
+            max-width: 750px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .contact-box p {
+            color: #bbb;
+            margin-bottom: 25px;
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 30px;
+            text-align: center;
+            background-color: #080b0f;
+            color: #777;
+            border-top: 1px solid #222;
+        }
+
+        footer span {
+            color: #f5b942;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 850px) {
+
+            nav ul {
+                display: none;
+            }
+
+            .hero-text h1 {
+                font-size: 45px;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .hero {
+                padding-left: 6%;
+                padding-right: 6%;
+            }
+
+            section {
+                padding-left: 6%;
+                padding-right: 6%;
+            }
+
+            .hero-text h1 {
+                font-size: 38px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="logo">SURYA KENCANA</div>
+
+        <ul>
+            <li><a href="#home">Beranda</a></li>
+            <li><a href="#profil">Profil</a></li>
+            <li><a href="#bisnis">Bisnis</a></li>
+            <li><a href="#visi">Visi</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- HERO -->
+    <header class="hero" id="home">
+
+        <div class="hero-text">
+
+            <div class="small-title">
+                Mining • Energy • Investment
+            </div>
+
+            <h1>
+                SURYA <span>KENCANA</span>
+            </h1>
+
+            <h2>
+                Entrepreneur | Coal & Energy Business
+            </h2>
+
+            <p>
+                Profil profesional Surya Kencana yang bergerak dalam
+                pengembangan bisnis pertambangan batu bara, energi,
+                investasi, serta pengembangan usaha berorientasi
+                pertumbuhan berkelanjutan.
+            </p>
+
+            <a href="#profil" class="btn">
+                Lihat Profil
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- PROFILE -->
+    <section class="about" id="profil">
+
+        <div class="section-title">
+            <span>Executive Profile</span>
+            <h2>Profil Pengusaha</h2>
+        </div>
+
+        <div class="about-container">
+
+            <div class="profile-card">
+
+                <div class="profile-photo">
+                    SK
+                </div>
+
+                <h3>SURYA KENCANA</h3>
+
+                <p>
+                    Coal & Energy Entrepreneur
+                </p>
+
+            </div>
+
+
+            <div class="about-text">
+
+                <h3>Tentang Surya Kencana</h3>
+
+                <p>
+                    Surya Kencana merupakan profil pengusaha yang
+                    berfokus pada sektor pertambangan batu bara,
+                    energi, perdagangan komoditas, dan investasi.
+                </p>
+
+                <p>
+                    Dalam pengembangan bisnis, pendekatan yang
+                    digunakan menitikberatkan pada efisiensi
+                    operasional, pengelolaan sumber daya,
+                    pengembangan jaringan bisnis, serta penerapan
+                    tata kelola perusahaan yang profesional.
+                </p>
+
+                <p>
+                    Sektor pertambangan membutuhkan integrasi antara
+                    operasi lapangan, logistik, pemasaran,
+                    manajemen risiko, keselamatan kerja, kepatuhan,
+                    serta pemahaman terhadap dinamika pasar energi.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- BUSINESS -->
+    <section class="business" id="bisnis">
+
+        <div class="section-title">
+            <span>Business Portfolio</span>
+            <h2>Fokus Bisnis</h2>
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="icon">⛏️</div>
+
+                <h3>Pertambangan Batu Bara</h3>
+
+                <p>
+                    Pengembangan dan pengelolaan kegiatan usaha
+                    pertambangan dengan perhatian terhadap
+                    produktivitas, keselamatan, dan tata kelola.
+                </p>
+            </div>
+
+
+            <div class="card">
+                <div class="icon">🚛</div>
+
+                <h3>Logistik & Distribusi</h3>
+
+                <p>
+                    Pengelolaan rantai pasok untuk mendukung
+                    transportasi dan distribusi komoditas
+                    secara efektif dan terintegrasi.
+                </p>
+            </div>
+
+
+            <div class="card">
+                <div class="icon">⚡</div>
+
+                <h3>Energi</h3>
+
+                <p>
+                    Pengembangan peluang bisnis dalam sektor
+                    energi dan komoditas untuk menjawab
+                    kebutuhan industri dan pasar.
+                </p>
+            </div>
+
+
+            <div class="card">
+                <div class="icon">📊</div>
+
+                <h3>Investasi</h3>
+
+                <p>
+                    Analisis serta pengembangan investasi
+                    strategis berdasarkan peluang,
+                    risiko, dan potensi pertumbuhan.
+                </p>
+            </div>
+
+
+            <div class="card">
+                <div class="icon">🌏</div>
+
+                <h3>Commodity Trading</h3>
+
+                <p>
+                    Pengembangan jaringan perdagangan
+                    komoditas dengan memperhatikan
+                    dinamika pasar domestik maupun global.
+                </p>
+            </div>
+
+
+            <div class="card">
+                <div class="icon">🤝</div>
+
+                <h3>Strategic Partnership</h3>
+
+                <p>
+                    Membangun hubungan dan kemitraan
+                    strategis untuk mendukung ekspansi
+                    dan keberlanjutan bisnis.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- STATS -->
+    <section>
+
+        <div class="section-title">
+            <span>Corporate Overview</span>
+            <h2>Business Indicators</h2>
+        </div>
+
+        <div class="stats">
+
+            <div class="stat">
+                <h3>01</h3>
+                <p>Mining</p>
+            </div>
+
+            <div class="stat">
+                <h3>02</h3>
+                <p>Energy</p>
+            </div>
+
+            <div class="stat">
+                <h3>03</h3>
+                <p>Trading</p>
+            </div>
+
+            <div class="stat">
+                <h3>04</h3>
+                <p>Investment</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- VISION -->
+    <section class="vision" id="visi">
+
+        <div class="section-title">
+            <span>Leadership</span>
+            <h2>Visi Bisnis</h2>
+        </div>
+
+        <div class="vision-box">
+
+            <h3>
+                Sustainable Growth Through Strategic Business
+            </h3>
+
+            <p>
+                Membangun bisnis pertambangan dan energi yang
+                kompetitif melalui pengelolaan profesional,
+                kolaborasi strategis, pemanfaatan teknologi,
+                pengendalian risiko, serta pertumbuhan
+                berkelanjutan.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section class="contact" id="kontak">
+
+        <div class="section-title">
+            <span>Business Connection</span>
+            <h2>Kontak</h2>
+        </div>
+
+        <div class="contact-box">
+
+            <p>
+                Untuk informasi bisnis, investasi,
+                kerja sama pertambangan, perdagangan komoditas,
+                maupun strategic partnership.
+            </p>
+
+            <a href="mailto:info@example.com" class="btn">
+                Hubungi Kami
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            © 2026 <span>SURYA KENCANA</span>
+            | Coal • Mining • Energy • Investment
+        </p>
+
+    </footer>
+
+</body>
+</html> 
